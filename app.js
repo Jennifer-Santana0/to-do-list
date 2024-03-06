@@ -3,8 +3,14 @@ const app = express()
 
 const PORT = 3000
 
+//CONFIGURACOES
+
+    //TEMPLATE ENGINE
+    app.set('view engine','ejs')
+
+
 app.get('/',(req,res)=>{
-    res.send("ola mundo")
+    res.render('index')
 })
 
 app.listen(PORT,()=>{
