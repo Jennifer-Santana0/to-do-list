@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const routes = require('./routes/router')
 const app = express()
 
 const PORT = 3000
@@ -10,12 +11,11 @@ const PORT = 3000
     app.set('view engine','ejs')
     //CSS JS IMG
     app.use(express.static(path.join(__dirname, 'public')))
+    //
 
     
 
-app.get('/',(req,res)=>{
-    res.render('index')
-})
+app.use(routes)
 
 app.listen(PORT,()=>{
     console.log(`http://localhost:${PORT}`)
