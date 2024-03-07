@@ -4,6 +4,7 @@ const TaksController = require('../controller/TaksController')
 
 
 
-routes.get('/',TaksController.getAll)
+routes.get('/',TaksController.getAllTask)
+routes.post('/create',TaksController.createTask)
 
 module.exports = routes

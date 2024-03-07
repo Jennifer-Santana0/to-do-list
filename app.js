@@ -13,6 +13,8 @@ const PORT = 3000
     app.set('view engine','ejs')
     //CSS JS IMG
     app.use(express.static(path.join(__dirname, 'public')))
+    //UTILIZANDO O REQ BODY
+    app.use(express.urlencoded())
     
 
     
