@@ -3,7 +3,7 @@ const ModelTask = require('../models/Task')
 const renderIndex = async (req,res) => {
     try{
         ModelTask.find().then((tasks)=>{
-            res.render('index', {tasks})
+            res.render('index', {tasks,nomeTask:''})
         })
     }catch(err){
         console.log('Ocorreu algum erro')
