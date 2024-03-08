@@ -6,7 +6,9 @@ const EditController = require('../controller/EditarController')
 
 routes.get('/',CreateController.renderIndex)
 routes.post('/create',CreateController.createTask)
-routes.get('/edit/:id',EditController.editarTask)
+routes.get('/edit/:id',EditController.getIdTask)
+routes.post('/edit/:id',EditController.editarTask)
+
 
 
 module.exports = routes

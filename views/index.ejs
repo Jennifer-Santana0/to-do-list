@@ -9,11 +9,20 @@
 <body>
     
     <header>
-        <form action="/create" method="post">
-            <label for="task">Nome da task:</label>
-            <input type="text" name="task" value="<%= nomeTask.task %>">
-            <button type="submit">adicionar task</button>
-        </form>
+        <%if(nomeTask.task){%>
+            <form action="/edit/<%= nomeTask._id %>" method="post">
+                <label for="task">Nome da task:</label>
+                <input type="text" name="task" value="<%= nomeTask.task %>">
+                <button type="submit">Editar task</button>
+            </form>
+        <%} else {%>
+            <form action="/create" method="post">
+                <label for="task">Nome da task:</label>
+                <input type="text" name="task">
+                <button type="submit">adicionar task</button>
+            </form>
+       <%}%>
+        
     </header>
 
     <section>
