@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const routes = require('./routes/router')
+const routes = require('./router/routes')
 const connectToDb = require('./database/db')
 connectToDb()
 const app = express()
@@ -19,7 +19,7 @@ const PORT = 3000
 
     
 
-app.use(routes)
+app.use('/',routes)
 
 app.listen(PORT,()=>{
     console.log(`http://localhost:${PORT}`)

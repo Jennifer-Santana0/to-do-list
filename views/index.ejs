@@ -10,20 +10,24 @@
     
     <header>
         <form action="/create" method="post">
-            <label for="task">Digite o nome da task:</label>
+            <label for="task">Nome da task:</label>
             <input type="text" name="task">
-            <button type="submit">Inserir task</button>
+            <button type="submit">adicionar task</button>
         </form>
     </header>
 
     <section>
         <ul>
-            <%for (let i = 0; i < listTask.length; i++) {%>
-                <li>
-                    <%= listTask[i].task %>
-                    <a href="">Editar</a>
-                </li>
+            <%if(tasks.length==0){%>
+                <h4>Nao ha nenhuma task</h4>
+            <%}else {%>
+                <%for (let i = 0; i < tasks.length; i++) {%>
+                    <li> <%= tasks[i].task %> </li>
+                    
+                <%}%>
             <%}%>
+            
+            
         </ul>
     </section>
 
