@@ -8,18 +8,25 @@
 </head>
 <body>
     
-    <form action="/create" method="post">
-        <input type="text" name="task" id="task" placeholder="Insira uma tarefa">
-        <button type="submit" id="addButton">Adicionar</button>
-    </form>
+    <header>
+        <form action="/create" method="post">
+            <label for="task">Digite o nome da task:</label>
+            <input type="text" name="task">
+            <button type="submit">Inserir task</button>
+        </form>
+    </header>
 
-    <ul>
-        <% taskList.forEach((task)=>{ %>
-            <li> <%= task.task %> | <%= task.date.toLocaleDateString('pt-BR') %> </li>
-        <% }) %>
-    </ul>
+    <section>
+        <ul>
+            <%for (let i = 0; i < listTask.length; i++) {%>
+                <li>
+                    <%= listTask[i].task %>
+                    <a href="">Editar</a>
+                </li>
+            <%}%>
+        </ul>
+    </section>
 
-    
 
     <script src="/js/script.js"></script>
 </body>

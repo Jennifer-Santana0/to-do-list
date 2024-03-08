@@ -1,10 +1,9 @@
 const express = require('express')
 const routes = express.Router()
-const TaksController = require('../controller/TaksController')
+const CreateTaskController = require('../controller/CreateTaskController')
 
+routes.get('/',CreateTaskController.main)
+routes.post('/create',CreateTaskController.createTask)
 
-
-routes.get('/',TaksController.getAllTask)
-routes.post('/create',TaksController.createTask)
 
 module.exports = routes
