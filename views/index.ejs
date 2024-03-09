@@ -31,15 +31,28 @@
                 <h4>Nao ha nenhuma task</h4>
             <%}else {%>
                 <%for (let i = 0; i < tasks.length; i++) {%>
-                    <li> <%= tasks[i].task %> <a href="/edit/<%= tasks[i]._id %>">Editar</a> </li>
-                    
+                    <li>
+                        <%= tasks[i].task %> 
+                        <a href="/edit/<%= tasks[i]._id %>">Editar</a>
+                        <a href="/delete/<%= tasks[i]._id %>/<%= tasks[i].task %>">Deletar</a>
+                     </li>
                 <%}%>
             <%}%>
-            
-            
         </ul>
     </section>
 
+    <%if(modal==true){%>
+        <section id="modal">
+            <a href="/">X</a>
+            <h6>Confimacoes</h6>
+            <hr>
+            <p>Deseja deletar a task <b>"<%=nomeTaskDelete%>"</b></p>
+            <a href="/">Nao</a>
+            <a href="/delete/<%=idTaskDelete%>">Sim</a>
+        </section>
+    <%}%>
+
+    
 
     <script src="/js/script.js"></script>
 </body>

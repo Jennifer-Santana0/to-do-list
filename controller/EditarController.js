@@ -3,7 +3,7 @@ const ModelTask = require('../models/Task')
 const getIdTask = (req,res) => {
     ModelTask.find().then((tasks)=>{
         ModelTask.findOne({_id:req.params.id}).then((nomeTask)=>{
-            res.render('index',{tasks,nomeTask})
+            res.render('index',{tasks,nomeTask,modal:false})
         }).catch((err)=>{
             console.log('erro')
         })
