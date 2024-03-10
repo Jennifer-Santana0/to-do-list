@@ -1,9 +1,9 @@
 const ModelTask = require('../models/Task')
 
-const getById = (req,res) => {
-    const idTaskDelete = req.params.id
-    const nomeTaskDelete = req.params.nome
-    ModelTask.find().then((tasks)=>{
+const getById = async (req,res) => {
+    const idTaskDelete = await req.params.id
+    const nomeTaskDelete = await req.params.nome
+    await ModelTask.find().then((tasks)=>{
         res.render('index', {tasks,nomeTask:'',modal:true,idTaskDelete,nomeTaskDelete})
     })
 }
