@@ -10,14 +10,14 @@
     
     <header>
         <%if(nomeTask.task){%>
+            <h1>EDITAR TAREFA</h1>
             <form action="/edit/<%= nomeTask._id %>" method="post">
-                <label for="task">Nome da task:</label>
                 <input type="text" name="task" value="<%= nomeTask.task %>">
                 <button type="submit">Editar task</button>
             </form>
         <%} else {%>
+            <h1>TO DO LIST</h1>
             <form action="/create" method="post">
-                <label for="task">Nome da task:</label>
                 <input type="text" name="task">
                 <button type="submit">adicionar task</button>
             </form>
@@ -43,12 +43,14 @@
 
     <%if(modal==true){%>
         <section id="modal">
-            <a href="/">X</a>
-            <h6>Confimacoes</h6>
-            <hr>
-            <p>Deseja deletar a task <b>"<%=nomeTaskDelete%>"</b></p>
-            <a href="/">Nao</a>
-            <a href="/delete/<%=idTaskDelete%>">Sim</a>
+            <div id="card">
+                <a href="/">X</a>
+                <h2>Confimacoes</h2>
+                <hr>
+                <p>Deseja deletar a task <b>"<%=nomeTaskDelete%>"</b></p>
+                <a href="/">Nao</a>
+                <a href="/delete/<%=idTaskDelete%>">Sim</a>
+            </div>
         </section>
     <%}%>
 
