@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -25,16 +26,21 @@
         
     </header>
 
-    <section>
+    <section id="tasks">
         <ul>
             <%if(tasks.length==0){%>
                 <h4>Nao ha nenhuma task</h4>
             <%}else {%>
                 <%for (let i = 0; i < tasks.length; i++) {%>
                     <li>
-                        <%= tasks[i].task %> 
-                        <a href="/edit/<%= tasks[i]._id %>">Editar</a>
-                        <a href="/delete/<%= tasks[i]._id %>/<%= tasks[i].task %>">Deletar</a>
+                        <div>
+                            <a href="/"><%= tasks[i].task %></a>
+                            <span><%= tasks[i].date.toLocaleDateString('pt-BR')%></span>
+                        </div>
+                        <div>
+                            <a class="btnEdit" href="/edit/<%= tasks[i]._id %>"><i class="bi bi-pencil-square"></i></a>
+                            <a class="btnDelete" href="/delete/<%= tasks[i]._id %>/<%= tasks[i].task %>"><i class="bi bi-trash"></i></a>
+                        </div>
                      </li>
                 <%}%>
             <%}%>

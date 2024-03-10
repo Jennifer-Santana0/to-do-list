@@ -49,4 +49,58 @@ button{
 }
 button:hover{
     background-color: #004e14;
+    color: #fff;
+}
+
+section#tasks{
+    margin: .5rem;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    position: relative;
+    padding: .5rem;
+    background-color: rgb(22,22,24);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 1.3rem;
+}
+ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+ul li span{
+    color: #ccc;
+    font-style: italic;
+    font-size: .8rem;
+    padding-left: 1rem;
+}
+ul li div{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+ul li:nth-child(odd){
+    background-color: #202024;
+}
+ul li:hover{
+    background-color: #5a5a5a;
+}
+a.btnEdit,a.btnDelete{
+    padding: .5rem;
+    text-decoration: none;
+    color: #ccc;
+    transition: all .3s ease-in-out;
+}
+a.btnEdit:hover{
+    background-color: #3643f4;
+    color: white;
+}
+a.btnDelete:hover{
+    background-color: #f44336;
+    color: #fff;
 }
