@@ -1,9 +1,7 @@
 const mongoose = require('mongoose')
 
 const connectToDb = () => {
-    mongoose.connect(
-        'mongodb+srv://root:admin@cluster0.flqulby.mongodb.net/'
-    ).then(()=>{
+    mongoose.connect(process.env.DB_URI).then(()=>{
         console.log('Banco de dados conectado')
     }).catch((err)=>{
         console.log('Erro ao conectar ao banco de dados. ' + err)

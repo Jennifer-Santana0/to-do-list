@@ -2,10 +2,11 @@ const express = require('express')
 const path = require('path')
 const routes = require('./router/routes')
 const connectToDb = require('./database/db')
+require('dotenv').config()
 connectToDb()
 const app = express()
 
-const PORT = 3000
+const port = process.env.PORT
 
 //CONFIGURACOES
 
@@ -21,7 +22,7 @@ const PORT = 3000
 
 app.use('/',routes)
 
-app.listen(PORT,()=>{
-    console.log(`http://localhost:${PORT}`)
+app.listen(port,()=>{
+    console.log(`http://localhost:${port}`)
 })
 
