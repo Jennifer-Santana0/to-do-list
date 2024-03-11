@@ -27,45 +27,11 @@
         
     </header>
 
-    <section id="tasks">
-        <ul>
-            <%if(tasks.length==0){%>
-                <h4>Nao ha nenhuma task</h4>
-            <%}else {%>
-                <%for (let i = 0; i < tasks.length; i++) {%>
-                    <li>
-                        <div>
-                            <a href="/"><%= tasks[i].task %></a>
-                            <span><%= tasks[i].date.toLocaleDateString('pt-BR')%></span>
-                        </div>
-                        <div>
-                            <a class="btnEdit" href="/edit/<%= tasks[i]._id %>"><i class="bi bi-pencil-square"></i></a>
-                            <a class="btnDelete" href="/delete/<%= tasks[i]._id %>/<%= tasks[i].task %>"><i class="bi bi-trash"></i></a>
-                        </div>
-                     </li>
-                <%}%>
-            <%}%>
-        </ul>
-    </section>
+    <%- include ("./components/task.ejs")%> 
 
     <%if(modal==true){%>
-        <section id="modal">
-            <div id="card">
-                <div id="head">
-                    <h2>Confimação</h2>
-                    <a id="close" href="/"><i class="bi bi-x"></i></a>
-                </div>
-                <hr>
-                <p>Deseja deletar a task: <br> <b>"<%=nomeTaskDelete%>"</b></p>
-                <div id="btns">
-                    <a id="btnNot" href="/">Nao</a>
-                    <a id="btnYes" href="/delete/<%=idTaskDelete%>">Sim</a>
-                </div>
-            </div>
-        </section>
+        <%- include ("./components/modal.ejs")%>    
     <%}%>
-
-    
 
     <script src="/js/script.js"></script>
 </body>
