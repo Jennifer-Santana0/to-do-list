@@ -189,3 +189,13 @@ div#btns a#btnYes:hover{
     color: #fff;
     background-color: #00aa2a;
 }
+
+.success{
+    background-color: rgb(87, 253, 87);
+    color: #000000;
+}
+
+.error{
+    color: #000000;
+    background-color: red;
+}

@@ -14,8 +14,15 @@ const renderIndex = async (req,res) => {
 const createTask = async (req,res) => {
     try{
         const nome = await req.body
-        await ModelTask.create(nome)
-        res.redirect('/')
+        if(nome.task==''){
+            req.flash('error_msg',"Voce precisa escrever o nome da task!")
+            res.redirect('/')
+        } else {
+            await ModelTask.create(nome)
+            req.flash('success_msg',"Task criada com sucesso!")
+            res.redirect('/')
+        }
+        
     }catch(err){
         console.log('Ocorreu algum erro')
     }

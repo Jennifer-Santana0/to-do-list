@@ -11,6 +11,7 @@ const getById = async (req,res) => {
 const deleteTask = async (req,res) => {
     try{
         await ModelTask.deleteOne({_id:req.params.id})
+        req.flash('success_msg',"Task deletada com sucesso!")
         res.redirect('/')
     }catch(err){
         console.log('erro'+err)
